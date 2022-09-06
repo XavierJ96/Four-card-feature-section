@@ -1,0 +1,203 @@
+:root{
+    /* Neutral Colors */
+    --dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --light-gray: hsl(0, 0%, 98%);
+
+    /* Primary Colors */
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+/* Remove default margin */
+body {
+    margin: 0;
+    height: 100vh;
+  }
+
+
+/* Typography */
+h1 {
+    text-align: center;
+    font-family: 'Poppins';
+    font-weight: 800;
+    font-size: 3.5rem; 
+    color: var(--dark-blue);
+}
+
+.thin_text{
+    font-family: 'Poppins';
+    font-size: 3.5rem; 
+    font-weight: 200;
+}
+
+header p{
+    text-align: center;
+    color: var(--grayish-blue);
+    font-size: 1.5rem;
+    font-family: 'Poppins';
+}
+
+.card p{
+    font-family: 'Poppins';
+    color: var(--grayish-blue);
+    font-size: 1.3rem;
+}
+
+.card h2 {
+    font-family: 'Poppins';
+    color: var(--dark-blue);
+    font-size: 1.8rem;
+}
+/* end of Typography */
+
+/* Containers */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.card__container {
+    display: grid;
+    gap: 3.5rem;
+    max-width:110rem;
+    grid-template-areas: 
+    "one two three"
+    "one four three";
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    margin-top: 3rem;
+    background-color: rgba(255, 255, 255, .85);
+    place-items: center;
+}
+
+.card:nth-child(1) {
+    grid-area: one;
+}
+
+.card:nth-child(2) {
+    grid-area: two;
+}
+
+.card:nth-child(3) {
+    grid-area: three;
+}
+
+.card:nth-child(4) {
+    grid-area: four;
+}
+/* end Containers */
+
+/* Cards */
+.card {
+    background-color: rgba(255, 255, 255, .85);
+    width: 100%;
+    aspect-ratio: 3/2;
+    padding: 2rem 3rem 3rem 3rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0.9375rem 1.875rem -0.6875rem rgb(131 166 210 / 50%);
+    position: relative;
+}
+
+.card__img {
+    text-align: end;
+}
+
+/* Setting card border colors */
+.card__red::after {
+    background-color: var(--red);
+}
+
+.card__cyan::after {
+    background-color: var(--cyan);
+}
+
+.card__orange::after {
+    background-color: var(--orange);
+}
+
+.card__blue::after {
+    background-color: var(--blue);
+}
+
+/* Setting border line parameters */
+.card::after {
+    content: '';
+    position: absolute;
+    height: .5rem;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 1rem 1rem 0 0;
+}
+
+
+/* Footer content */
+.attribution, a {
+    margin-top: 5rem;
+    font-size: 1.5rem;
+    font-family: 'Poppins';
+}
+/* end Footer */
+
+/* Media queries */
+@media  (max-width:1000px) {
+
+    .card__container {
+         grid-template-areas: 
+            "one two"
+            "three four";
+        }
+        
+        .card:nth-child(1) {
+            grid-area: one;
+        }
+        
+        .card:nth-child(2) {
+            grid-area: two;
+        }
+        
+        .card:nth-child(3) {
+            grid-area: three;
+        }
+        
+        .card:nth-child(4) {
+            grid-area: four;
+        }
+
+    .card {
+        max-width: 38rem;
+    }
+}
+
+@media (max-width:650px) {
+
+    .card__container {
+        display: block;
+        max-width: 37rem;
+    }
+
+    .card + .card {
+        margin-top: 3rem;
+    }
+}
+/* end Media queries */
+
