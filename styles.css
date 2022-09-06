@@ -95,11 +95,11 @@ header p{
 }
 
 .card:nth-child(3) {
-    grid-area: three;
+    grid-area: four;
 }
 
 .card:nth-child(4) {
-    grid-area: four;
+    grid-area: three;
 }
 /* end Containers */
 
@@ -115,10 +115,15 @@ header p{
     justify-content: space-between;
     box-shadow: 0 0.9375rem 1.875rem -0.6875rem rgb(131 166 210 / 50%);
     position: relative;
+    transition: transform 0.2s ease-in-out;
 }
 
 .card__img {
     text-align: end;
+}
+
+.card:hover {
+    transform: scale(1.1);
 }
 
 /* Setting card border colors */
@@ -176,11 +181,11 @@ header p{
         }
         
         .card:nth-child(3) {
-            grid-area: three;
+            grid-area: four;
         }
         
         .card:nth-child(4) {
-            grid-area: four;
+            grid-area: three;
         }
 
     .card {
